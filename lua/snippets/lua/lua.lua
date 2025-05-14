@@ -11,5 +11,5 @@ return {
 
 },
 {
-  s("LL",{t("<leader>"),i(0)})
+  s("LL",{t("<leader>"),i(0)}),
 }

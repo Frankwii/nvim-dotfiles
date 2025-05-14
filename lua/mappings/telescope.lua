@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 map("n", "<leader>r", function() vim.cmd "Telescope resume" end, { desc = "Telescope resume" })
-map("n", "<leader>C", function()
+map("n", "<leader>CC", function()
   local nvim_home = require "utils.nvim_home"
   vim.cmd.cd(nvim_home)
   require("telescope.builtin").find_files()

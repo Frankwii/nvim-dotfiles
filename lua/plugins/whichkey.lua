@@ -15,6 +15,7 @@ return {
         {"<leader>W", group=" Workspace"},
         {"<leader>w", group=" Windows"},
         {"<leader>r", group=" Run"},
+        {"<leader>C", group="󱢚 Config"},
       })
 
       -- -- Hydra mappings for window resizing:
