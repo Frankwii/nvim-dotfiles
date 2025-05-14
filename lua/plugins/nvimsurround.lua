@@ -2,6 +2,13 @@ return {
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
+    init = function()
+      local map = vim.keymap.set
+      map("o", "ir", "i[")
+      map("o", "ar", "a[")
+      map("o", "ia", "i<")
+      map("o", "aa", "a<")
+    end,
     opts = {
       keymaps = {
         insert = "<C-s>",
