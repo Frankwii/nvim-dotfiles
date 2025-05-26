@@ -1,3 +1,8 @@
+local snippetutils = require("snippets.utils")
+
+local snippets = {}
+local autosnippets = {}
+
 return {
 
   s("fun", {
@@ -8,8 +13,9 @@ return {
   }),
 
   s("loc", {t("local ")}),
-
 },
 {
   s("LL",{t("<leader>"),i(0)}),
+  -- snippetutils.pftest(),
+  -- snippetutils.surround_if_inserted(0, {"a", "b"}),
 }

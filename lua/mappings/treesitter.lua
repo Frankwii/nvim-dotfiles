@@ -26,7 +26,7 @@ M.textobjects.move = {
     ["mb"] = "@block.inner",
   },
 
-  goto_previous_start = {
+  goto_next_end = {
     ["Mf"] = "@function.outer",
     ["Mc"] = "@conditional.outer",
     ["Mk"] = "@class.outer",
@@ -35,7 +35,7 @@ M.textobjects.move = {
     ["Mb"] = "@block.inner",
   },
 
-  goto_next_end = {
+  goto_previous_start = {
     ["ñf"] = "@function.outer",
     ["ñc"] = "@conditional.outer",
     ["ñk"] = "@class.outer",
@@ -56,20 +56,20 @@ M.textobjects.move = {
 
 M.textobjects.swap = {
   swap_next = {
-    ["<leader>Sfj"] = "@function.outer",
-    ["<leader>Skj"] = "@class.outer",
-    ["<leader>Scj"] = "@conditional.outer",
-    ["<leader>Slj"] = "@loop.outer",
-    ["<leader>Spj"] = "@parameter.inner",
-    ["<leader>S<C-b>j"] = "@block.outer",
+    ["Rfj"] = "@function.outer",
+    ["Rkj"] = "@class.outer",
+    ["Rcj"] = "@conditional.outer",
+    ["Rlj"] = "@loop.outer",
+    ["Rpj"] = "@parameter.inner",
+    ["R<C-b>j"] = "@block.outer",
   },
   swap_previous = {
-    ["<leader>Sfk"] = "@function.outer",
-    ["<leader>Skk"] = "@class.outer",
-    ["<leader>Sck"] = "@conditional.outer",
-    ["<leader>Slk"] = "@loop.outer",
-    ["<leader>Spk"] = "@parameter.inner",
-    ["<leader>S<C-b>k"] = "@block.outer",
+    ["Rfk"] = "@function.outer",
+    ["Rkk"] = "@class.outer",
+    ["Rck"] = "@conditional.outer",
+    ["Rlk"] = "@loop.outer",
+    ["Rpk"] = "@parameter.inner",
+    ["R<C-b>k"] = "@block.outer",
   }
 }
 

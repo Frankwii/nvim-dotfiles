@@ -1,12 +1,12 @@
 return {
 	{
 		"L3MON4D3/LuaSnip",
+    event = "VeryLazy",
 		init = function()
 			vim.g.lua_snippets_path = "./lua/snippets/lua"
 			vim.g.snipmate_snippets_path = "./lua/snippets/snipmate"
 		end,
 		cmd = { "LuaSnipListAvailable" },
-		lazy = false,
 		opts = function()
 			local ls = require("luasnip")
 			local map = vim.keymap.set
@@ -72,6 +72,7 @@ return {
 
 			return {
 				enable_autosnippets = true,
+        store_selection_leys = "<Tab>"
 			}
 		end,
 	},

@@ -11,44 +11,13 @@ return {
       wk.add({
         {"<leader>c", group=" LSP"},
         {"<leader>f", group=" Find"},
-        {"<leader>S", group=" Swap"},
-        {"<leader>W", group=" Workspace"},
+        {"<leader>F", group=" Filetree"},
+        {"<leader>cW", group=" Workspace"},
         {"<leader>w", group=" Windows"},
         {"<leader>r", group=" Run"},
         {"<leader>C", group="󱢚 Config"},
       })
 
-      -- -- Hydra mappings for window resizing:
-      -- local resize_keymap = vim.g.nonconflicting_hydra_keymap .. "R"
-      --
-      -- wk.add(
-      --   {"<leader>wr", function ()
-      --     wk.show({keys=resize_keymap, loop=true})
-      --   end, desc="󰩨 Resize"}
-      -- )
-      --
-      -- local navutils = require "utils.navutils"
-      -- local windowmappings = {
-      --   [" Left"] = {key="h", rhs = navutils.ResizeLeft},
-      --   [" Down"] = {key="j", rhs = navutils.ResizeDown},
-      --   [" Up"] = {key="k", rhs = navutils.ResizeUp},
-      --   [" Right"] = {key="l", rhs = navutils.ResizeRight}
-      -- }
-      --
-      -- local formatted_windowmappings = {}
-      -- local i = 0
-      -- for desc, spec in pairs(windowmappings) do
-      --   table.insert(formatted_windowmappings, i, {
-      --     resize_keymap .. spec.key,
-      --     spec.rhs,
-      --     desc = desc,
-      --     mode = "n",
-      --   })
-      --   i = i+1
-      -- end
-      --
-      -- wk.add(formatted_windowmappings)
-      --- Add descriptions to groups
       return {
         icons = {
           breadcrumb = "»", -- symbol used in the command line area that shows your active key combo

@@ -2,7 +2,7 @@ return {
 	"stevearc/conform.nvim",
 	keys = {
 		{
-			"<leader>F",
+			"<leader>cF",
 			function()
 				require("conform").format()
 			end,
@@ -18,9 +18,5 @@ return {
 		default_format_opts = {
 			lsp_format = "fallback",
 		},
-		-- format_on_save = {
-		--   lsp_format = "fallback",
-		--   timeout_ms = 500
-		-- }
 	},
 }

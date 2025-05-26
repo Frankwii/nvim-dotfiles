@@ -19,7 +19,7 @@ end
 
 local M = {}
 
-is_rightmost = function()
+local is_rightmost = function()
 	local curwin = getwin()
 	vim.cmd("wincmd l")
 	local rightwin = getwin()
@@ -31,7 +31,7 @@ is_rightmost = function()
 	end
 end
 
-is_leftmost = function()
+local is_leftmost = function()
 	local curwin = getwin()
 	vim.cmd("wincmd h")
 	local leftwin = getwin()
@@ -43,7 +43,7 @@ is_leftmost = function()
 	end
 end
 
-is_bottommost = function()
+local is_bottommost = function()
 	local curwin = getwin()
 	vim.cmd("wincmd j")
 	local bottomwin = getwin()
@@ -55,7 +55,7 @@ is_bottommost = function()
 	end
 end
 
-is_topmost = function()
+local is_topmost = function()
 	local curwin = getwin()
 	vim.cmd("wincmd k")
 	local topwin = getwin()

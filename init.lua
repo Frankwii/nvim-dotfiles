@@ -1,6 +1,6 @@
 require("options")
-require("lsp")
 require("lazynvim")
+require("lsp")
 require("mappings.global")
 require("autocmds")
 

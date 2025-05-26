@@ -1,11 +1,15 @@
 local map = vim.keymap.set
 
 map("n", "<leader>R", function() vim.cmd "Telescope resume" end, { desc = "Telescope resume" })
-map("n", "<leader>CC", function()
+
+map("n", "<leader>Cf", function()
   local nvim_home = require "utils.nvim_home"
-  vim.cmd.cd(nvim_home)
-  require("telescope.builtin").find_files()
-end, { desc = "Find in config" })
+  require("telescope.builtin").find_files({cwd=nvim_home})
+end, { desc = "Find file in config" })
+map("n", "<leader>Cw", function()
+  local nvim_home = require "utils.nvim_home"
+  require("telescope.builtin").live_grep({cwd=nvim_home})
+end, { desc = "Find word in config" })
 
 map("n", "<leader>ff", function() vim.cmd "Telescope find_files" end, { desc = "Files" })
 map("n", "<leader>fb", function() vim.cmd "Telescope buffers" end, { desc = "Open buffers" })
@@ -21,9 +25,8 @@ map("n", "<leader>fz", function() vim.cmd "Telescope current_buffer_fuzzy_find" 
 
 map("n", "<leader>f*", function() vim.cmd "Telescope grep_string" end, { desc = "Find current word" })
 
-map("n", "<leader>fT", function() vim.cmd "Telescope" end, { desc = "Telescope pickers" })
 map("n", "<leader>fR", function() vim.cmd "Telescope registers" end, { desc = "Vim registers" })
-map("n", "<leader>fJ", function() vim.cmd "Telescope jumplist" end, { desc = "Keymaps" })
+map("n", "<leader>fJ", function() vim.cmd "Telescope jumplist" end, { desc = "Jumplist" })
 map("n", "<leader>fH", function() vim.cmd "Telescope oldfiles" end, { desc = "File history" })
 map("n", "<leader>fM", function() vim.cmd "Telescope marks" end, { desc = "Marks" })
 map("n", "<leader>fC", function() vim.cmd "Telescope git_commits" end, { desc = "Git commits" })

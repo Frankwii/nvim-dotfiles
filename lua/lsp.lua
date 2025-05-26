@@ -1,24 +1,39 @@
-for type, icon in pairs({ Error = "", Warn = "", Hint = "󰠠", Info = "" }) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN]  = "",
+      [vim.diagnostic.severity.HINT]  = "󰠠",
+      [vim.diagnostic.severity.INFO]  = ""
+		},
+	},
+})
 
 local servers_and_configs = {
-	pyright = {},
+	pyright = {
+		-- analysis = {
+		--   diagnosticMode = "workspace",
+		--   typeCheckingMode = "strict"
+		-- }
+	},
 	lua_ls = {},
 	clangd = {},
 	bashls = {},
-	tsserver = {},
+	ts_ls = {},
 }
 
 vim.g.servers_and_configs = servers_and_configs
 
-for lsp, config in pairs(servers_and_configs) do
-	vim.lsp.enable(lsp)
+for server, config in pairs(servers_and_configs) do
+	local blink = require("blink.cmp")
 
-	vim.lsp.config(lsp, {
+	vim.lsp.config(server, {
+		root_markers = { ".git" },
 		settings = {
-			[lsp] = config,
+			[server] = config,
 		},
+		capabilities = blink.get_lsp_capabilities({}),
 	})
+
+	vim.lsp.enable(server)
 end
