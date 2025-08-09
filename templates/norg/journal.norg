@@ -1,0 +1,20 @@
+@document.meta
+title: {TODAY_OF_FILENAME}
+description: {TODAY_OF_FILENAME}'s daily note
+authors: {AUTHOR}
+categories: [
+  daily
+]
+created: {NOW}
+updated: {NOW}
+version: {VERSION}
+@end
+
+See {{:{YESTERDAY_OF_FILENAME}:}}[yesterday's] or {{:{TOMORROW_OF_FILENAME}:}}[tomorrow's] note.
+
+* Tasks for today
+  ~ ( ) Bon dia a Marga
+  ~ ( ) Write tasks for the day
+  ~ ( ) {CURSOR}
+
+

@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		map("n", "<leader>co", vim.diagnostic.open_float, opts("Open diagnostics"))
 
-		-- Using conform for this.
+		-- Currently using conform for this.
 		-- map("n", "<leader>cF", vim.lsp.buf.format, opts "Format")
 	end,
 })

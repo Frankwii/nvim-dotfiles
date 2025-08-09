@@ -13,9 +13,12 @@ return {
         {"<leader>f", group=" Find"},
         {"<leader>F", group=" Filetree"},
         {"<leader>cW", group=" Workspace"},
-        {"<leader>w", group=" Windows"},
+        {"<leader>w", group=" Windows"},
         {"<leader>r", group=" Run"},
         {"<leader>C", group="󱢚 Config"},
+        {"<leader>n", group = "󰉐 Neorg" },
+        {"<leader>A", group = "󱚟 AI" },
+        {"gm", group = "󰇀 Multicursor" },
       })
 
       return {

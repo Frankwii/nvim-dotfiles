@@ -1,15 +1,9 @@
 local map = vim.keymap.set
 
 map("n", "<leader>R", function() vim.cmd "Telescope resume" end, { desc = "Telescope resume" })
-
-map("n", "<leader>Cf", function()
-  local nvim_home = require "utils.nvim_home"
-  require("telescope.builtin").find_files({cwd=nvim_home})
-end, { desc = "Find file in config" })
-map("n", "<leader>Cw", function()
-  local nvim_home = require "utils.nvim_home"
-  require("telescope.builtin").live_grep({cwd=nvim_home})
-end, { desc = "Find word in config" })
+map("n", "<leader>f.", function()
+  require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })
+end, { desc = "Find in current dir" })
 
 map("n", "<leader>ff", function() vim.cmd "Telescope find_files" end, { desc = "Files" })
 map("n", "<leader>fb", function() vim.cmd "Telescope buffers" end, { desc = "Open buffers" })
@@ -34,3 +28,13 @@ map("n", "<leader>fS", function() vim.cmd "Telescope git_status" end, { desc = "
 map("n", "<leader>f<M-s>", function() vim.cmd "Telescope search_history" end, { desc = "Searches" })
 map("n", "<leader>fO", function() vim.cmd "Telescope vim_options" end, { desc = "Vim options" })
 map("n", "<leader>f<M-h>", function() vim.cmd "Telescope command_history" end, { desc = "Ex command history" })
+
+map("n", "<leader>Cf", function()
+  local nvim_home = require "utils.nvim_home"
+  require("telescope.builtin").find_files({cwd=nvim_home})
+end, { desc = "Find file in config" })
+map("n", "<leader>Cw", function()
+  local nvim_home = require "utils.nvim_home"
+  require("telescope.builtin").live_grep({cwd=nvim_home})
+end, { desc = "Find word in config" })
+

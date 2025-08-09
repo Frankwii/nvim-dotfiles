@@ -24,9 +24,9 @@ return {
             ["<C-j>"] = actions.results_scrolling_down,
 
             --- Opening files
-            ["ss"] = actions.file_split,
-            ["sv"] = actions.file_vsplit,
-            ["st"] = actions.file_tab,
+            ["<M-s>"] = actions.file_vsplit,
+            ["<M-v>"] = actions.file_split,
+            ["T"] = actions.file_tab,
 
             -- Marks
             ["m"] = function()
@@ -46,9 +46,12 @@ return {
             ["<C-M-k>"] = actions.preview_scrolling_up,
           },
           i = {
-            -- ["<CR>"] = {"<esc>", type="command"},
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
+
+            --- Opening files
+            ["<M-s>"] = actions.file_vsplit,
+            ["<M-v>"] = actions.file_split,
 
             -- Preview
             ["<C-M-j>"] = actions.preview_scrolling_down,

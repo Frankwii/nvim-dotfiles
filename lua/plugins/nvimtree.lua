@@ -1,9 +1,8 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	init = function()
-		vim.keymap.set("n", "<M-t>", function()
-			vim.cmd("NvimTreeToggle")
-		end, { desc = "Toggle nvim-tree" })
+    vim.keymap.set("n", "<M-t>", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree "})
+    vim.keymap.set("n", "<M-o>", ":NvimTreeFocus<CR>", { desc = "Focus nvim-tree "})
 	end,
 	opts = {
 		on_attach = function(bufnr)
@@ -19,7 +18,11 @@ return {
       map("n", "-", function ()
         api.tree.close()
         api.tree.open({find_file=true, update_root=true})
-      end , opts "Open tree in current buffer")
+        local buffer_path = api.tree.get_node_under_cursor().absolute_path
+        api.node.navigate.parent_close()
+        api.tree.change_root_to_node()
+        api.tree.find_file({buf = buffer_path})
+      end , opts "Focus tree in current buffer")
 			map("n", "q", api.tree.close, opts("Close tree"))
 			map("n", "h", api.node.navigate.parent_close, opts("Close directory"))
 			map("n", "H", api.tree.change_root_to_parent, opts("Change root to parent"))
@@ -52,11 +55,11 @@ return {
 			map("n", ".", api.tree.toggle_hidden_filter, opts("Toggle dotfiles"))
 			map("n", "n", api.fs.create, opts("Create file"))
 			map("n", "r", api.fs.rename_node, opts("Rename file or folder"))
-			map("n", "s", function()
+			map("n", "<M-s>", function()
 				api.node.open.vertical()
 				api.tree.open()
 			end, opts("Split vertical"))
-			map("n", "v", function()
+			map("n", "<M-v>", function()
 				api.node.open.horizontal()
 				api.tree.open()
 			end, opts("Split horizontal"))
